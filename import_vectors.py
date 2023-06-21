@@ -6,6 +6,18 @@ class Vector:
         self.y = y
         self.z = z
 
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y, self.z + other.z)
+    
+    def __sub__(self, other):
+        return Vector(self.x - other.x, self.y - other.y, self.z - other.z)
+
+    def __mul__(self, a: float | int):
+        return Vector(a * self.x, a * self.y, a * self.z)
+    
+    def __len__(self):
+        return math.sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
+
     def mult(self, a: float | int):
         return Vector(a * self.x, a * self.y, a * self.z)
 
